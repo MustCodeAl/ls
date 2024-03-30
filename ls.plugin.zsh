@@ -48,10 +48,10 @@ if [[ "$ZSH_LS_BACKEND" == "lsd" ]]; then
   }
   compdef ll=lsd
 
-  function lt() {
+  function lte() {
     lsd --tree ${lsd_params} $@
   }
-  compdef lt=lsd
+  compdef lte=lsd
 elif [[ "$ZSH_LS_BACKEND" == "exa" || "$ZSH_LS_BACKEND" == "eza" ]]; then
   typeset -g exa_params; exa_params=('--icons' '--classify' '--group-directories-first' '--time-style=long-iso' '--group' '--color=auto')
 
@@ -79,10 +79,10 @@ elif [[ "$ZSH_LS_BACKEND" == "exa" || "$ZSH_LS_BACKEND" == "eza" ]]; then
   }
   compdef ll=$ZSH_LS_BACKEND
 
-  function lt() {
+  function lte() {
     $ZSH_LS_BACKEND --tree ${exa_params} $@
   }
-  compdef lt=$ZSH_LS_BACKEND
+  compdef lte=$ZSH_LS_BACKEND
 else
   typeset -g _ls
   _ls=(=ls)
@@ -130,7 +130,7 @@ else
   }
   compdef ll=ls
 
-  function lt() {
+  function lte() {
     find . -print | sed -e 's;[^/]*/;|;g;s;|; |;g'
   }
 fi
