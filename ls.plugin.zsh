@@ -62,27 +62,27 @@ elif [[ "$ZSH_LS_BACKEND" == "exa" || "$ZSH_LS_BACKEND" == "eza" ]]; then
   function ls() {
     $ZSH_LS_BACKEND ${exa_params} $@
   }
-  compdef ls=$ZSH_LS_BACKEND
+  #compdef ls=$ZSH_LS_BACKEND
 
   function l() {
     $ZSH_LS_BACKEND --git-ignore ${exa_params} $@
   }
-  compdef l=$ZSH_LS_BACKEND
+  #compdef l=$ZSH_LS_BACKEND
 
   function la() {
     $ZSH_LS_BACKEND -a ${exa_params} $@
   }
-  compdef la=$ZSH_LS_BACKEND
+  #compdef la=$ZSH_LS_BACKEND
 
   function ll() {
     $ZSH_LS_BACKEND --header --long ${exa_params} $@
   }
-  compdef ll=$ZSH_LS_BACKEND
+  #compdef ll=$ZSH_LS_BACKEND
 
   function lte() {
     $ZSH_LS_BACKEND --tree ${exa_params} $@
   }
-  compdef lte=$ZSH_LS_BACKEND
+  #compdef lte=$ZSH_LS_BACKEND
 else
   typeset -g _ls
   _ls=(=ls)
